@@ -52,7 +52,12 @@
         };
     })
 
+  const handleKeyDown = (e) => {
+    if (e.code === 'Escape') { visible = false }
+  }
 </script>
+
+<svelte:window on:keydown={handleKeyDown}/>
 
 <Thumbnail bind:thumbnailClasses bind:thumbnailStyle bind:protect on:click={toggle}>
     {#if thumbnail || gallery}
